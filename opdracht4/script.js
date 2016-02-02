@@ -8,8 +8,104 @@
 *
 *   Copyleft 2012, all wrongs reversed.
 */
+ 
+(function() {
 
-// Variable declaration
+	'Use Strict';
+
+	var constants = {
+		SANDBOX: 'SANDBOX',
+		LINEAIR = "LINEAIR",
+		GPS_AVAILABLE = 'GPS_AVAILABLE',
+		GPS_UNAVAILABLE = 'GPS_UNAVAILABLE',
+		POSITION_UPDATED = 'POSITION_UPDATED',
+        currentPosition = currentPositionMarker = customDebugging = debugId = map = interval =intervalCounter = updateMap = false;
+		// vars waarvan waardes vast zijn
+	};
+
+	// Debugging functies
+	var debugging = {}; 
+
+	debugging._geo_error_handler = function(code, message) {
+	    debug_message('geo.js error '+code+': '+message);
+	}
+	
+	debugging.debug_message = function(message) {
+	    (customDebugging && debugId)?document.getElementById(debugId).innerHTML:console.log(message);
+	}
+	
+ 	debugging.set_custom_debugging = function(debugId){
+	    debugId = this.debugId;
+	    customDebugging = true;
+	}
+
+	function Map(options) {
+		
+		var _this = this;
+		var _defaults = {
+			refreshRate = 1000
+			// meer opties
+		};
+
+		_this.options = options || defaults;
+
+	}
+
+	Map.init = function() {
+		ET.addListener(constants.GPS_AVAILABLE, this.start_interval());
+        ET.addListener(constants.GPS_UNAVAILABLE, function(){debugging.debug_message('GPS is niet beschikbaar.')});
+        (geo_position_js.init())?ET.fire(constants.GPS_AVAILABLE):ET.fire(constants.GPS_UNAVAILABLE);
+	}
+
+	Map.start_interval = function(event) {
+        debugging.debug_message("GPS is beschikbaar, vraag positie.");
+        _update_position();
+        interval = self.setInterval(_update_position, REFRESH_RATE);
+        ET.addListener(POSITION_UPDATED, _check_locations);
+}
+	}
+
+    Map.update_positie = function() {
+
+    }
+
+    Map.set_position = function () {
+
+    }
+
+    Map.check_locations = function() {
+
+    }
+
+    Map.calculate_distance = function() {
+
+    }
+
+    Map.generate_map = function() {
+
+    }
+
+    Map.update_positie = function (event) {
+        // use currentPosition to center the map
+        var newPos = new google.maps.LatLng(currentPosition.coords.latitude, currentPosition.coords.longitude);
+        map.setCenter(newPos);
+        currentPositionMarker.setPosition(newPos);
+    }
+
+	var map = new Map();
+
+	map.init();
+    map.start_interval();
+    map.update_positie();
+    map.set_position();
+
+});
+
+
+
+
+
+
 var SANDBOX = "SANDBOX";
 var LINEAIR = "LINEAIR";
 var GPS_AVAILABLE = 'GPS_AVAILABLE';
@@ -173,17 +269,4 @@ function update_positie(event){
     var newPos = new google.maps.LatLng(currentPosition.coords.latitude, currentPosition.coords.longitude);
     map.setCenter(newPos);
     currentPositionMarker.setPosition(newPos);
-}
-
-// FUNCTIES VOOR DEBUGGING
-
-function _geo_error_handler(code, message) {
-    debug_message('geo.js error '+code+': '+message);
-}
-function debug_message(message){
-    (customDebugging && debugId)?document.getElementById(debugId).innerHTML:console.log(message);
-}
-function set_custom_debugging(debugId){
-    debugId = this.debugId;
-    customDebugging = true;
 }
