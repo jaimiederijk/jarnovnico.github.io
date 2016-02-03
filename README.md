@@ -1,3 +1,3 @@
-# minorRepo - Web app from scratch
+# Minor Everything Web Repo
 
-Dit is de repo voor het vak 'Web app from scratch' bij de minor Everything Web van Jarno Verhoogt
+Dit is de repo voor de vakken 'Web app from scratch' & 'CSS to the rescue' bij de minor Everything Web van Jarno Verhoogt
