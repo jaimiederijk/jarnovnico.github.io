@@ -1,5 +1,7 @@
 (function() {
 
+	"use strict";
+
 	var app = {
 
 		// Methodes are defining functions to an object.
@@ -21,7 +23,7 @@
 				sections.toggle(window.location.hash);
 			});
 
-			sections.toggle(window.location.hash);
+			// sections.toggle(window.location.hash);
 		}
 	};
 
@@ -30,7 +32,7 @@
 		toggle: function() {
 			console.log("toggle sections");
 
-			var section = document.getElementById("section-startscherm");
+			var section = document.getElementById("section-navigatie");
 
 			section.onclick = function() {
 				console.log("click");
