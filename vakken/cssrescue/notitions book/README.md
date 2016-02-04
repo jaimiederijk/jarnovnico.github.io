@@ -124,7 +124,7 @@ border-left-width: 0;
 ### Color
 New keyword van SVG ‘currentColor’
 
-> all of the horizontal separators (all <hr> elements) to automatically have the same color as the text
+> all of the horizontal separators (all hr elements) to automatically have the same color as the text
 
 ```
 hr {
