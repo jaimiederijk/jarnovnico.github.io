@@ -197,14 +197,6 @@ this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; v
 	var map = new Map();
 
 	map.init();
-    map._start_interval();
-    map._update_positie();
-    map._set_position();
-    map._check_locations();
-    map._calculate_distance();
-    map.generate_map();
-    isNumber();
-    map.update_positie();
 
 })();
 // Calls the function that results from that evaluated expression.
