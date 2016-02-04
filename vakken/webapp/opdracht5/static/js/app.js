@@ -22,7 +22,7 @@
 		toggle: function() {
 			console.log("toggle sections");
 		}
-	}
+	};
 
 	// Actieveer methode in het object myModule
 	app.init()
