@@ -1,20 +1,30 @@
 (function() {
 
-	// Object literal
-	var App = {
+	var app = {
 
-		// Objecten hebben properties (name) en values ('Jarno').
-		name: 'Jarno',
-		age: 26,
-		// Methodes are defining functions to an object
+		// Methodes are defining functions to an object.
 		init: function() {
-			console.log(this.name);
+			console.log("init app");
+			routes.init();
 		}
 	};
 
+	var routes = {
+		
+		init: function() {
+			console.log("init routes");
+			sections.toggle();
+		}
+	};
+
+	var sections = {
+
+		toggle: function() {
+			console.log("toggle sections");
+		}
+	}
+
 	// Actieveer methode in het object myModule
-	App.init()
-	// routes.init()
-	// sections.toggle(route)
+	app.init()
 
 })();
