@@ -113,6 +113,7 @@ Zo hou je je CSS droog
 
 ### Maintainability vs brevity
 De vorige oplossing was wel meer code, maar maintainable. Dus hoe kan dat beter? Ga je voor meer code maar makkelijker aan te passen of ga je voor weinig code maar lastig aan te passen?
+
 ```
 border-width: 10px 10px 10px 0;'
 	vs 
@@ -120,8 +121,9 @@ border-width: 10px;
 border-left-width: 0;
 ```
 
-Color
+### Color
 New keyword van SVG ‘currentColor’
+
 > all of the horizontal separators (all <hr> elements) to automatically have the same color as the text
 
 ```
