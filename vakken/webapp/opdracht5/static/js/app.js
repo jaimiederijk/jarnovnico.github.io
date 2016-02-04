@@ -32,11 +32,11 @@
 		toggle: function() {
 			console.log("toggle sections");
 
-			var section = document.getElementById("section-navigatie");
+			// var section = document.getElementById("section-navigatie");
 
-			section.onclick = function() {
-				console.log("click");
-			}
+			// section.onclick = function() {
+			// 	console.log("click");
+			// }
 		}
 	};
 
