@@ -24,7 +24,7 @@
 		}
 	};
 
-	// Actieveer methode in het object myModule
+	// Actieveer methode in het object app
 	app.init()
 
 })();
