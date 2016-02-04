@@ -47,6 +47,7 @@ Toen waren er config flags ipv prefixes.
 > one big component of maintainable code is minimizing the amount of edits necessary to make a change
 
 > several issues with the maintainability of this code that we can fix
+
 ```
 padding: 6px 16px;
 border: 1px solid #446d88;
@@ -122,6 +123,7 @@ border-left-width: 0;
 Color
 New keyword van SVG ‘currentColor’
 > all of the horizontal separators (all <hr> elements) to automatically have the same color as the text
+
 ```
 hr {
     height: .5em;
@@ -131,6 +133,7 @@ hr {
 
 ### Inheritance
 > to give form elements the same font as the rest of the page, you don’t need to re-specify it, just use inherit:
+
 ```
 input, select, button { font: inherit; }
 ```
