@@ -20,6 +20,8 @@
 				// The window.location read-only property returns a Location object with information about the current location of the document.
 				sections.toggle(window.location.hash);
 			});
+
+			sections.toggle(window.location.hash);
 		}
 	};
 
@@ -27,6 +29,12 @@
 
 		toggle: function() {
 			console.log("toggle sections");
+
+			var section = document.getElementById("section-startscherm");
+
+			section.onclick = function() {
+				console.log("click");
+			}
 		}
 	};
 
@@ -34,3 +42,11 @@
 	app.init()
 
 })();
+
+// Bronnen:
+
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+// https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange
+
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/location

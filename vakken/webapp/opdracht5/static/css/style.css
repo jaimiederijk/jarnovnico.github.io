@@ -1,0 +1,12 @@
+.section {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  color: white;
+  margin-bottom: 32px;
+}
+
+  .section:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
