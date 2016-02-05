@@ -8,12 +8,6 @@
 *
 *   Copyleft 2012, all wrongs reversed.
 */
- 
-// Event functies - bron: http://www.nczonline.net/blog/2010/03/09/custom-events-in-javascript/ Copyright (c) 2010 Nicholas C. Zakas. All rights reserved. MIT License
-// Gebruik: ET.addListener('foo', handleEvent); ET.fire('event_name'); ET.removeListener('foo', handleEvent);
-function EventTarget(){this._listeners={}}
-EventTarget.prototype={constructor:EventTarget,addListener:function(a,c){"undefined"==typeof this._listeners[a]&&(this._listeners[a]=[]);this._listeners[a].push(c)},fire:function(a){"string"==typeof a&&(a={type:a});a.target||(a.target=this);if(!a.type)throw Error("Event object missing 'type' property.");if(this._listeners[a.type]instanceof Array)for(var c=this._listeners[a.type],b=0,d=c.length;b<d;b++)c[b].call(this,a)},removeListener:function(a,c){if(this._listeners[a]instanceof Array)for(var b=
-this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; var ET = new EventTarget();
 
 // Immediately-Invoked Function Expression. It executes immediately after it’s created.
 // Turns the code within (in this case, a function) into an expression.
@@ -26,24 +20,30 @@ this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; v
 		LINEAIR = "LINEAIR",
 		GPS_AVAILABLE = 'GPS_AVAILABLE',
 		GPS_UNAVAILABLE = 'GPS_UNAVAILABLE',
-		POSITION_UPDATED = 'POSITION_UPDATED',
-        debugId = customDebugging = false,
-        locatieRij = markerRij = [];
+		POSITION_UPDATED = 'POSITION_UPDATED'
 		// More constant vars?
 	};
+	
+	// Deze heb ik er buiten geplaatst constant variabelen worden aangegeven met alleen hoofdletters
+	// Daarnaast gebruik Engelse namen ipv. Nederlandse namen dit is handig als er andere developers aan jouw code moeten gaan werken.
+	var debugId = false;
+	var customDebugging = false;
+        var locations = [];
+        var markers = [];
 
 	// Debugging functions
 	var debugging = {}; 
-
-	debugging._geo_error_handler = function(code, message) {
+	
+	// Probeer underscores te vermijden alleen bij private variabelen.
+	debugging.errorHandler = function(code, message) {
 	    debug_message('geo.js error '+code+': '+message);
 	}
 	
-	debugging.debug_message = function(message) {
+	debugging.message = function(message) {
 	    (constants.customDebugging && constants.debugId)?document.getElementById(constants.debugId).innerHTML:console.log(message);
 	}
 	
- 	debugging.set_custom_debugging = function(debugId){
+ 	debugging.customDebugging = function(debugId){
 	    constants.debugId = this.constants.debugId;
 	    constants.customDebugging = true;
 	}
@@ -79,7 +79,7 @@ this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; v
 	}
 
     // Vraag de huidige positie aan geo.js, stel een callback in voor het resultaat
-    Map._update_positie = function() {
+    Map.updatePosition = function() {
         _defaults.intervalCounter++;
         geo_position_js.getCurrentPosition(_defaults.map._set_position, _geo_error_handler, {enableHighAccuracy:true});
     }
@@ -181,17 +181,10 @@ this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; v
         // Zorg dat de kaart geupdated wordt als het POSITION_UPDATED event afgevuurd wordt
         ET.addListener(constants.POSITION_UPDATED, _defaults.map.update_positie);
     }
-
-    isNumber: function(n) {
+    
+    // Was geen functie, was beschreven als een method uit een object maar zonder object er omheen :)
+    var isNumber = function(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
-    }
-
-    // Update de positie van de gebruiker op de kaart
-    Map.update_positie = function (event) {
-        // use currentPosition to center the map
-        var newPos = new google.maps.LatLng(_defaults.currentPosition.coords.latitude, _defaults.currentPosition.coords.longitude);
-        _defaults.map.setCenter(newPos);
-        _defaults.currentPositionMarker.setPosition(newPos);
     }
 
 	var map = new Map();
