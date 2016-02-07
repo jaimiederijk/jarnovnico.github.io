@@ -1,13 +1,11 @@
-.section {
-  background-color: tomato;
-  color: white;
-  margin-bottom: 32px;
-}
+// .section-content {
+//   display: none;
+// }
 
-#section-lijstje {
+#section-startscherm {
   display: none;
 }
 
-#section-startscherm {
+#section-lijstje {
   display: none;
 }
