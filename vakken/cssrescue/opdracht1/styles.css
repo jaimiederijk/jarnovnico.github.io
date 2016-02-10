@@ -197,6 +197,36 @@ main {
 			margin-top: 32px;
 		}
 
+		#password > form > fieldset > legend {
+			width: 100%;
+			margin-bottom: 24px;
+		}
+
+		#password > form > fieldset label {
+			width: 100%;
+			float: left;
+			margin-bottom: 24px;
+		}
+
+		#password > form > fieldset label span {
+			margin-left: 12px;
+		}
+
+		@media (max-width: 370px) {
+
+			#password > form > fieldset label {
+				width: 100%;
+				float: left;
+			}
+
+			#password > form > fieldset label span {
+				width: 100%;
+				float: left;
+				margin-left: 0;
+			}
+
+		}
+
 		.album-wrapper {
 			display: flex;
 			flex-direction: row;
