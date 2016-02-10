@@ -75,6 +75,8 @@ body > header > nav > ul li > a > svg {
 	height: 25px;
 }
 
+/* Navigation gerelateerde styling */
+
 .main-nav {
 	background-color: #5ae1c0;
 	width: 200px;
@@ -85,29 +87,31 @@ body > header > nav > ul li > a > svg {
 	padding: 32px;
 }
 
-	body > header > nav > ul:nth-child(1) {
-		margin-top: 32px;
-	}
+body > header > nav > ul:nth-child(1) {
+	margin-top: 32px;
+}
 
-		body > header > nav > ul:nth-child(1) li {
-			height: 32px;
-		}
+body > header > nav > ul:nth-child(1) li {
+	height: 32px;
+}
 
-			body > header > nav > ul:nth-child(1) li > a {
-				vertical-align: middle;
-			}
+body > header > nav > ul:nth-child(1) li > a {
+	vertical-align: middle;
+}
 
-			body > header > nav > ul:nth-child(1) li > a > svg {
-				vertical-align: middle;
-			}
+body > header > nav > ul:nth-child(1) li > a > svg {
+	vertical-align: middle;
+}
 
-	body > header > nav > ul:nth-child(2) {
-		margin-top: 32px;
-	}
+body > header > nav > ul:nth-child(2) {
+	margin-top: 32px;
+}
 
-		body > header > nav > ul:nth-child(2) li {
-			height: 25px;
-		}
+body > header > nav > ul:nth-child(2) li {
+	height: 25px;
+}
+
+	/* Navigation Responsive gerelateerde styling */
 
 	@media (max-width: 780px) {
 		
@@ -154,6 +158,8 @@ body > header > nav > ul li > a > svg {
 		}
 	}
 
+/* Main (middle content blocks) gerelateerde styling */
+
 main {
 	width: calc(83% - 200px);
 	position: relative;
@@ -161,7 +167,59 @@ main {
 	top: 0;
 }
 
+body > header > div > figure > img {
+	width: 100%;
+	display: block;
+}
+
+body > main article {
+	background-color: #fff;
+	margin-bottom: 32px;
+	padding: 32px;
+}
+
+body > main > article:nth-child(1) {
+	margin-top: 32px;
+}
+
+body > main > article:nth-child(1) > p:nth-child(2) {
+	margin-bottom: 24px;
+}
+
+#password > form > fieldset > legend {
+	width: 100%;
+	margin-bottom: 24px;
+}
+
+#password > form > fieldset label {
+	width: 100%;
+	float: left;
+	margin-bottom: 24px;
+}
+
+#password > form > fieldset label span {
+	margin-left: 12px;
+}
+
+.album-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+#photo-albums > div figure > img {
+	width: 100%;
+	display: block;
+}
+
+#photo-albums > div > figure:nth-child(2) > svg {
+	width: 25px;
+	height: 25px;
+}
+
+	/* Main Responsive gerelateerde styling */
+
 	@media (max-width: 1140px) {
+		
 		main {
 			left: 232px;
 			width: calc(100% - 262px);
@@ -169,83 +227,74 @@ main {
 	}
 
 	@media (max-width: 980px) {
+
 		main {
 			left: 200px;
 			width: calc(100% - 200px);
 		}
+
+		body > main > article:nth-child(1) {
+			margin-top: 0;
+		}
 	}
 
 	@media (max-width: 780px) {
+		
 		main {
 			width: 100%;
 			left: auto;
 		}
 	}
 
-	body > header > div > figure > img {
-		width: 100%;
-		display: block;
-	}
+	@media (max-width: 600px) {
 
-	body > main article {
-		background-color: #fff;
-		margin-bottom: 32px;
-		padding: 32px;
-	}
-
-		body > main > article:nth-child(1) {
-			margin-top: 32px;
+		.album-wrapper {
+			display: flex;
+			flex-direction: column;
 		}
 
-		#password > form > fieldset > legend {
-			width: 100%;
-			margin-bottom: 24px;
+		#photo-albums > div > figure:nth-child(1) {
+			margin-bottom: 32px;
 		}
+	}
+
+	@media (max-width: 370px) {
 
 		#password > form > fieldset label {
 			width: 100%;
 			float: left;
-			margin-bottom: 24px;
 		}
 
 		#password > form > fieldset label span {
-			margin-left: 12px;
-		}
-
-		@media (max-width: 370px) {
-
-			#password > form > fieldset label {
-				width: 100%;
-				float: left;
-			}
-
-			#password > form > fieldset label span {
-				width: 100%;
-				float: left;
-				margin-left: 0;
-			}
-
-		}
-
-		.album-wrapper {
-			display: flex;
-			flex-direction: row;
-		}
-
-		#photo-albums > div figure > img {
 			width: 100%;
-			display: block;
+			float: left;
+			margin-left: 0;
 		}
 
-		#photo-albums > div > figure:nth-child(2) > svg {
-			width: 25px;
-			height: 25px;
-		}
+	}
+
+/* Footer gerelateerde styling */
 
 footer {
 	background-color: #cccccc;
 	margin-bottom: 32px;
 }
+
+.footer-content-wrap {
+	padding: 32px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+	/* Footer Responsive gerelateerde styling */
+
+	@media (max-width: 980px) {
+
+		footer {
+			margin-bottom: 0;
+		}
+	}
 
 	@media (max-width: 940px) {
 		
@@ -258,13 +307,23 @@ footer {
 
 		.footer-content-wrap {
 			width: 100%;
-			flex-direction: column;
 		}
 	}
 
-	.footer-content-wrap {
-		padding: 32px;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+	@media (max-width: 560px) {
+		
+		.footer-content-wrap {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.footer-section-wrap {
+			margin-bottom: 32px;
+		}
+
+		.footer-section-wrap:nth-child(3) {
+			margin-bottom: 0;
+		}
+
 	}
