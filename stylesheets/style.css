@@ -82,3 +82,10 @@ header {
 section {
 	margin-bottom: 42px;
 }
+
+	@media (max-width: 349px) {
+		
+		body {
+			padding: 12px;
+		}
+	}
