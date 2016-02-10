@@ -219,6 +219,10 @@ body > header > div > figure {
 	display: block;
 }
 
+#photo-albums > div > figure:nth-child(1) {
+	margin-right: 32px; 
+}
+
 #photo-albums > div > figure:nth-child(2) > svg {
 	width: 25px;
 	height: 25px;
@@ -259,6 +263,10 @@ body > header > div > figure {
 		.album-wrapper {
 			display: flex;
 			flex-direction: column;
+		}
+
+		#photo-albums > div > figure:nth-child(1) {
+			margin-right: 0; 
 		}
 
 		#photo-albums > div > figure:nth-child(1) {
