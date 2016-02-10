@@ -201,6 +201,14 @@ body > main > article:nth-child(1) > p:nth-child(2) {
 	margin-left: 12px;
 }
 
+body > header > div > figure {
+	margin-bottom: 24px;
+}
+
+#photo-albums > div figure > img {
+	margin-bottom: 24px;
+}
+
 .album-wrapper {
 	display: flex;
 	flex-direction: row;
