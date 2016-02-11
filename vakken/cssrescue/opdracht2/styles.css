@@ -88,6 +88,10 @@ body {
   flex-wrap: wrap;
 }
 
+[role="link"]  {
+  color: #fff;
+}
+
 svg {
   max-width: 2em;
   max-height: 2em;
@@ -100,7 +104,8 @@ img {
 
 body > header {
   width: 20%;
-  background-color: #5ae1c0;
+  background-color: #160C28;
+  color: #fff;
 }
 
 body > header > figure > img {
@@ -114,7 +119,7 @@ body > header > nav > ul li {
 }
 
 body > header > nav > ul li:hover {
-  background-color: #00c5a1;
+  background-color: #000411;
 }
 
 body > header > nav > ul li a {
@@ -150,12 +155,13 @@ body > header > nav {
 
 body > header > nav > ul li a svg {
   margin-right: 1em;
+  fill: #fff;
 }
 
 body > main {
   width: 80%;
   padding: 1.5em;
-  background-color: #eaebec;
+  background-color: #E1EFE6;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -164,7 +170,6 @@ body > main {
 
 body > main article {
   padding: 1.5em;
-  border: 0.1em solid #cccccc;
   border-radius: 0.2em;
   background-color: #fff;
   width: 40em;
@@ -172,8 +177,8 @@ body > main article {
   margin-bottom: 1.5em;
 }
 
-[role="main"] article:target {
-  background-color: red;
+body > main article:target {
+  // border: 0.15em solid #EFCB68;
 }
 
 body > main article:nth-child(2) > section > header {
@@ -183,12 +188,17 @@ body > main article:nth-child(2) > section > header {
 body > main article:nth-child(2) > section {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 body > main article:nth-child(2) > section > figure {
   max-width: 300px;
   max-width: min-content;
   margin: auto;
+}
+
+body > main article:nth-child(2) > div:nth-child(2) > button {
+  margin-bottom: 1em;
 }
 
 body > main article:nth-child(3) {
@@ -232,12 +242,28 @@ body > main article:nth-child(4) figure figcaption {
   width: 100%;
 }
 
+[role="button"] {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 0.1em;
+  padding: 0.2em 0.4em;
+  outline: none;
+  color: #fff;
+  background-color: #EFCB68;
+  border: 0.1em solid #EFCB68;
+}
+
+[role="button"]:hover {
+  cursor: pointer;
+  opacity: .75;
+}
+
 body > footer {
   display: flex;
   justify-content: space-around;
   padding: 1.5em;
   min-width: 100%;
-  background-color: #25282b;
+  background-color: #000411;
   color: #fff;
 }
 
@@ -265,7 +291,7 @@ body > footer {
 	}
 
 	body > main article:nth-child(2n+1) {
-		background-color: #eaebec;
+		background-color: #E1EFE6;
 	}
 
 	body > main article:nth-child(3) > form > fieldset > button {
