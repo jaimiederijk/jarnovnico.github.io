@@ -178,7 +178,9 @@ body > main article {
 }
 
 body > main article:target {
-  // border: 0.15em solid #EFCB68;
+  -webkit-box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
+  -moz-box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
+  box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
 }
 
 body > main article:nth-child(2) > section > header {
@@ -240,6 +242,26 @@ body > main article:nth-child(4) figure:nth-child(2) {
 
 body > main article:nth-child(4) figure figcaption {
   width: 100%;
+}
+
+.popout {
+  display: none;
+}
+
+.popout:target {
+  display: block;
+}
+
+.popout a {
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.75);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 1em;
+  font-weight: bold;
+  border-radius: 0.1em;
+  background-color: #fff;
+  z-index: 999;
 }
 
 [role="button"] {
