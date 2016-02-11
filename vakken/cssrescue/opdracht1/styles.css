@@ -1,4 +1,5 @@
 /* Begin reset */ 
+/* This reset of styling I learned from Dylan Vens */
 
 html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
@@ -51,9 +52,20 @@ table {
 }
 
 a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+
+a:visited { color: inherit; }
 
 /* Global styling */
+
+@font-face {
+  font-family: Ampersand;
+  src:  local('Baskerville'),
+        local('Goudy Old Style'),
+        local('Garamond'),
+        local('Palatino');
+  unicode-range: U+26;
+  font-style: italic;
+}
 
 * {
   -moz-box-sizing: border-box;
@@ -61,285 +73,185 @@ a:hover { text-decoration: underline; }
   box-sizing: border-box;
 }
 
-html { -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; height: 100%;} 
+html { 
+  -webkit-font-smoothing: antialiased; 
+  -webkit-text-size-adjust: 100%; 
+  height: 100%;
+} 
 
 body {
-  font: 15px 'Circular Std', sans-serif;
+  font-family: Ampersand, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  font-size: 1em;
   color: #25282b;
-  background: #eaebec;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-body > header > nav > ul li > a > svg {
-	width: 25px;
-	height: 25px;
+svg {
+  max-width: 2em;
+  max-height: 2em;
 }
 
-/* Navigation gerelateerde styling */
-
-.main-nav {
-	background-color: #5ae1c0;
-	width: 200px;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	padding: 32px;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-body > header > nav > ul:nth-child(1) {
-	margin-top: 32px;
+body > header {
+  width: 20%;
+  background-color: #5ae1c0;
 }
 
-body > header > nav > ul:nth-child(1) li {
-	height: 32px;
+body > header > figure > img {
+  display: block;
+  max-width: 3em;
 }
 
-body > header > nav > ul:nth-child(1) li > a {
-	vertical-align: middle;
+body > header > nav > ul li {
+  width: 100%;
+  height: 3em;
 }
 
-body > header > nav > ul:nth-child(1) li > a > svg {
-	vertical-align: middle;
+body > header > nav > ul li:hover {
+  background-color: #00c5a1;
 }
 
-body > header > nav > ul:nth-child(2) {
-	margin-top: 32px;
+body > header > nav > ul li a {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body > header > nav > ul:nth-child(2) li {
-	height: 25px;
+body > header > figure {
+  width: 3em;
+  order: 2;
+  margin: 0 auto;
 }
 
-	/* Navigation Responsive gerelateerde styling */
-
-	@media (max-width: 780px) {
-		
-		body > header > nav > ul:nth-child(1) {
-			margin-top: 58.1px;
-		}
-
-		.main-nav {
-			position: relative;
-			width: 100%;
-			height: auto;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-
-		.profile-container {
-			width: 200px;
-		}
-
-		.main-nav-links {
-			width: auto;
-			margin-left: 32px;
-		}
-	}
-
-	@media (max-width: 440px) {
-
-		body > header > nav > ul:nth-child(1) {
-			margin-top: 32px;
-		}
-
-		.main-nav {
-			flex-direction: column;
-		}
-
-		.profile-container {
-			width: 100%;
-		}
-
-		.main-nav-links {
-			width: 100%;
-			margin: 0;
-		}
-	}
-
-/* Main (middle content blocks) gerelateerde styling */
-
-main {
-	width: calc(83% - 200px);
-	position: relative;
-	left: 232px;
-	top: 0;
+body > header > h1 {
+  margin-top: 1em;
+  text-align: center;
 }
 
-body > header > div > figure > img {
-	width: 100%;
-	display: block;
+body > header > p {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+body > header > nav {
+  margin-top: 1em;
+  width: 100%;
+  display: block;
+  order: 3;
+}
+
+body > header > nav > ul li a svg {
+  margin-right: 1em;
+}
+
+body > main {
+  width: 80%;
+  padding: 1.5em;
+  background-color: #eaebec;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 body > main article {
-	background-color: #fff;
-	margin-bottom: 32px;
-	padding: 32px;
+  padding: 1.5em;
+  background-color: yellow;
+  border: 0.1em solid #cccccc;
+  border-radius: 0.2em;
+  background-color: #fff;
+  max-width: 40em;
+  height: 100%;
+  margin-bottom: 1.5em;
 }
 
-body > main > article:nth-child(1) {
-	margin-top: 32px;
+body > main article:nth-child(2) {
+  display: flex;
+  flex-direction: column;
 }
 
-body > main > article:nth-child(1) > p:nth-child(2) {
-	margin-bottom: 24px;
+body > main article:nth-child(2) > header > h2 {
+  width: 100%;
 }
 
-#password > form > fieldset > legend {
-	width: 100%;
-	margin-bottom: 24px;
+body > main article:nth-child(2) > form > fieldset {
+  width: 100%;
+  display: flex;
 }
 
-#password > form > fieldset label {
-	width: 100%;
-	float: left;
-	margin-bottom: 24px;
+body > main article:nth-child(2) > form > fieldset > legend {
+  margin-bottom: 1em;
 }
 
-#password > form > fieldset label span {
-	margin-left: 12px;
+body > main article:nth-child(2) > form > fieldset label {
+  max-width: 100%;
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-body > header > div > figure {
-	margin-bottom: 24px;
+body > main article:nth-child(2) > form > fieldset label input {
+  max-width: 100%;
+  margin-right: 1em;
 }
 
-#photo-albums > div figure > img {
-	margin-bottom: 24px;
+body > main article:nth-child(2) > form > fieldset label span {
+  width: 9.375em;
 }
 
-.album-wrapper {
-	display: flex;
-	flex-direction: row;
+body > main article:nth-child(2) > form > fieldset > button {
+  width: 100%;
 }
 
-#photo-albums > div figure > img {
-	width: 100%;
-	display: block;
+body > main article:nth-child(3) figure:nth-child(2) {
+  margin-bottom: 1em;
 }
 
-#photo-albums > div > figure:nth-child(1) {
-	margin-right: 32px; 
+body > main article:nth-child(3) figure figcaption {
+  width: 100%;
+  text-align: center;
 }
 
-#photo-albums > div > figure:nth-child(2) > svg {
-	width: 25px;
-	height: 25px;
+body > footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5em;
+  min-width: 100%;
+  background-color: #25282b;
+  color: #fff;
 }
 
-	/* Main Responsive gerelateerde styling */
+@media (max-width: 480px) {
+  
+  body > footer {
+    flex-direction: column;
+  }
 
-	@media (max-width: 1140px) {
-		
-		main {
-			left: 232px;
-			width: calc(100% - 262px);
-		}
-	}
-
-	@media (max-width: 980px) {
-
-		main {
-			left: 200px;
-			width: calc(100% - 200px);
-		}
-
-		body > main > article:nth-child(1) {
-			margin-top: 0;
-		}
-	}
-
-	@media (max-width: 780px) {
-		
-		main {
-			width: 100%;
-			left: auto;
-		}
-	}
-
-	@media (max-width: 600px) {
-
-		.album-wrapper {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#photo-albums > div > figure:nth-child(1) {
-			margin-right: 0; 
-		}
-
-		#photo-albums > div > figure:nth-child(1) {
-			margin-bottom: 32px;
-		}
-	}
-
-	@media (max-width: 370px) {
-
-		#password > form > fieldset label {
-			width: 100%;
-			float: left;
-		}
-
-		#password > form > fieldset label span {
-			width: 100%;
-			float: left;
-			margin-left: 0;
-		}
-
-	}
-
-/* Footer gerelateerde styling */
-
-footer {
-	background-color: #cccccc;
-	margin-bottom: 32px;
+  body > footer > address {
+    margin-top: 1em;
+  }
 }
 
-.footer-content-wrap {
-	padding: 32px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+@media (max-width: 999px) {
+  body > header {
+    width: 100%;
+  }
+
+  body > main {
+    width: 100%;
+  }
 }
 
-	/* Footer Responsive gerelateerde styling */
-
-	@media (max-width: 980px) {
-
-		footer {
-			margin-bottom: 0;
-		}
-	}
-
-	@media (max-width: 940px) {
-		
-		.footer-section-wrap {
-			width: 150px;
-		}
-	}
-
-	@media (max-width: 780px) {
-
-		.footer-content-wrap {
-			width: 100%;
-		}
-	}
-
-	@media (max-width: 560px) {
-		
-		.footer-content-wrap {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-
-		.footer-section-wrap {
-			margin-bottom: 32px;
-		}
-
-		.footer-section-wrap:nth-child(3) {
-			margin-bottom: 0;
-		}
-
-	}
+@media (max-width: 1305px) {
+  body > main article {
+    width: 100%;
+  }
+}
