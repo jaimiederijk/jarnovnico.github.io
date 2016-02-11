@@ -205,10 +205,6 @@ body > main article:nth-child(2) > form > fieldset label span {
   width: 9.375em;
 }
 
-body > main article:nth-child(2) > form > fieldset > button {
-  width: 100%;
-}
-
 body > main article:nth-child(3) figure:nth-child(2) {
   margin-bottom: 1em;
 }
@@ -251,6 +247,10 @@ body > footer {
 
 	body > main article:nth-child(2n+1) {
 		background-color: #eaebec;
+	}
+
+	body > main article:nth-child(2) > form > fieldset > button {
+	  width: 100%;
 	}
 }
 
