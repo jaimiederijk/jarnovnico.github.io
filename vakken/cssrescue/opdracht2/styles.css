@@ -4,7 +4,7 @@
 html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, em, img, ins q, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -12,7 +12,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+menu, nav, output, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -108,21 +108,21 @@ body > header {
   color: #fff;
 }
 
-body > header > figure > img {
+header img {
   display: block;
   max-width: 3em;
 }
 
-body > header > nav > ul li {
+header ul li {
   width: 100%;
   height: 3em;
 }
 
-body > header > nav > ul li:hover {
+header ul li:hover {
   background-color: #000411;
 }
 
-body > header > nav > ul li a {
+header a {
   width: 100%;
   height: 3em;
   display: flex;
@@ -130,7 +130,7 @@ body > header > nav > ul li a {
   align-items: center;
 }
 
-body > header > figure {
+header > figure {
   width: 3em;
   order: 2;
   margin: 0 auto;
@@ -153,12 +153,12 @@ body > header > nav {
   order: 3;
 }
 
-body > header > nav > ul li a svg {
+body > header svg {
   margin-right: 1em;
   fill: #fff;
 }
 
-body > main {
+main {
   width: 80%;
   padding: 1.5em;
   background-color: #E1EFE6;
@@ -168,7 +168,7 @@ body > main {
   justify-content: space-around;
 }
 
-body > main article {
+main article {
   padding: 1.5em;
   border-radius: 0.2em;
   background-color: #fff;
@@ -177,70 +177,70 @@ body > main article {
   margin-bottom: 1.5em;
 }
 
-body > main article:target {
+main article:target {
   -webkit-box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
   -moz-box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
   box-shadow: 0 0 19px -1px rgba(0,0,0,.75);
 }
 
-body > main article:nth-child(2) > section > header {
+main article:nth-child(2) header {
   width: 100%;
 }
 
-body > main article:nth-child(2) > section {
+main article:nth-child(2) > section {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1em;
 }
 
-body > main article:nth-child(2) > section > figure {
+main article:nth-child(2) > section figure {
   max-width: 300px;
   max-width: min-content;
   margin: auto;
 }
 
-body > main article:nth-child(2) > div:nth-child(2) > button {
+main article:nth-child(2) > div:nth-child(2) > button {
   margin-bottom: 1em;
 }
 
-body > main article:nth-child(3) {
+main article:nth-child(3) {
   display: flex;
   flex-direction: column;
 }
 
-body > main article:nth-child(3) > header > h2 {
+main article:nth-child(3) > header > h2 {
   width: 100%;
 }
 
-body > main article:nth-child(3) > form > fieldset {
+main article:nth-child(3) > form > fieldset {
   width: 100%;
   display: flex;
 }
 
-body > main article:nth-child(3) > form > fieldset > legend {
+main article:nth-child(3) > form > fieldset > legend {
   margin-bottom: 1em;
 }
 
-body > main article:nth-child(3) > form > fieldset label {
+main article:nth-child(3) > form > fieldset label {
   max-width: 100%;
   margin-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
 }
 
-body > main article:nth-child(3) > form > fieldset label input {
+main article:nth-child(3) > form > fieldset label input {
   margin-right: 1em;
 }
 
-body > main article:nth-child(3) > form > fieldset label span {
+main article:nth-child(3) > form > fieldset label span {
   width: 9.375em;
 }
 
-body > main article:nth-child(4) figure:nth-child(2) {
+main article:nth-child(4) figure:nth-child(2) {
   margin-bottom: 1em;
 }
 
-body > main article:nth-child(4) figure figcaption {
+main article:nth-child(4) figure figcaption {
   width: 100%;
 }
 
@@ -280,7 +280,7 @@ body > main article:nth-child(4) figure figcaption {
   opacity: .75;
 }
 
-body > footer {
+footer {
   display: flex;
   justify-content: space-around;
   padding: 1.5em;
@@ -301,22 +301,22 @@ body > footer {
 }
 
 @media (max-width: 680px) {
-	body > main {
+	main {
 		padding: 0;
 	}
 
-	body > main article {
+	main article {
 		width: 100%;
 		margin: 0;
 		border: none;
 		border-radius: none;
 	}
 
-	body > main article:nth-child(2n+1) {
+	main article:nth-child(2n+1) {
 		background-color: #E1EFE6;
 	}
 
-	body > main article:nth-child(3) > form > fieldset > button {
+	main article:nth-child(3) > form > fieldset > button {
 	  width: 100%;
 	}
 }
@@ -326,18 +326,18 @@ body > footer {
     width: 100%;
   }
 
-  body > main {
+  main {
     width: 100%;
   }
 }
 
 @media (max-width: 1305px) {
 
-  body > main article:nth-child(3) > form > fieldset label input {
+  main article:nth-child(3) > form > fieldset label input {
   	width: 100%;
   }
 
-  body > main article:nth-child(3) > form > fieldset label span {
+  main article:nth-child(3) > form > fieldset label span {
 	  width: 100%;
 	}
 }
