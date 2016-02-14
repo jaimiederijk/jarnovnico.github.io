@@ -208,31 +208,31 @@ main article:nth-child(3) {
   flex-direction: column;
 }
 
-main article:nth-child(3) > header > h2 {
+main article:nth-child(3) h2 {
   width: 100%;
 }
 
-main article:nth-child(3) > form > fieldset {
+main article:nth-child(3) fieldset {
   width: 100%;
   display: flex;
 }
 
-main article:nth-child(3) > form > fieldset > legend {
+main article:nth-child(3) legend {
   margin-bottom: 1em;
 }
 
-main article:nth-child(3) > form > fieldset label {
+main article:nth-child(3) label {
   max-width: 100%;
   margin-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
 }
 
-main article:nth-child(3) > form > fieldset label input {
+main article:nth-child(3) input {
   margin-right: 1em;
 }
 
-main article:nth-child(3) > form > fieldset label span {
+main article:nth-child(3) span {
   width: 9.375em;
 }
 
@@ -240,7 +240,7 @@ main article:nth-child(4) figure:nth-child(2) {
   margin-bottom: 1em;
 }
 
-main article:nth-child(4) figure figcaption {
+main article:nth-child(4) figcaption {
   width: 100%;
 }
 
@@ -291,11 +291,11 @@ footer {
 
 @media (max-width: 480px) {
   
-  body > footer {
+  footer {
     flex-direction: column;
   }
 
-  body > footer > address {
+  address {
     margin-top: 1em;
   }
 }
@@ -316,7 +316,7 @@ footer {
 		background-color: #E1EFE6;
 	}
 
-	main article:nth-child(3) > form > fieldset > button {
+	[role="button"] {
 	  width: 100%;
 	}
 }
@@ -333,11 +333,11 @@ footer {
 
 @media (max-width: 1305px) {
 
-  main article:nth-child(3) > form > fieldset label input {
+  main article:nth-child(3) input {
   	width: 100%;
   }
 
-  main article:nth-child(3) > form > fieldset label span {
+  main article:nth-child(3) span {
 	  width: 100%;
 	}
 }
