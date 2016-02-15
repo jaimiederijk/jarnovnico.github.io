@@ -58,15 +58,15 @@
 
 
 
-			var a = document.getElementById("section-lijstje"),
-				b = document.getElementById("section-startscherm");
+			var listSection = document.getElementById("section-list"),
+				startSection = document.getElementById("section-start");
 
-			if (a.style.display == "block") {
-				a.style.display = "none";
-				b.style.display = "block";
+			if (listSection.style.display == "block") {
+				listSection.style.display = "none";
+				startSection.style.display = "block";
 			} else {
-				a.style.display = "block";
-				b.style.display = "none";
+				listSection.style.display = "block";
+				startSection.style.display = "none";
 			}
 
 
