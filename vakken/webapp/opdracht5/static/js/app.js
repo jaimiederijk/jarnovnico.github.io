@@ -15,7 +15,7 @@
 			console.log("init routes");
 
 			// Conditional (ternary) operator
-			//If condition is true, the operator has the value of val1. Otherwise it has the value of val2.
+			// If condition is true, the operator has the value of val1. Otherwise it has the value of val2.
 			var home = window.location.hash ? window.location.hash : "#home";
 			
 			// The hashchange event fires when a window's hash changes.
@@ -23,9 +23,12 @@
 			// 	sections.toggle(window.location.hash);
 			// });
 			
+			// Fire the toggle() methode where first section gets to be "#home"
+			sections.toggle(home);
+
 			// The hashchange event fires when a window's hash changes.
 			window.addEventListener("hashchange", function() { 
-				sections.toggle(home); 
+				 sections.toggle()
 			}, false);
 
 			// sections.toggle(window.location.hash);
@@ -36,6 +39,16 @@
 
 		toggle: function() {
 			console.log("toggle sections");
+
+			// querySelectorAll gives a array and then with a for loop, go through all sections and hide them
+			for (var i = 0; i < document.querySelectorAll("section").length; i++) {
+				document.querySelectorAll("section")[i].classList.add("hide");
+			};
+
+			// Get the current hash and remove the class "hide". That will make it display block
+			document.querySelector(window.location.hash).classList.remove("hide");
+
+
 
 			// var a = document.querySelectorAll(".section-content");
 
