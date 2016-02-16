@@ -4,7 +4,7 @@
 
 		// Methodes are defining functions to an object.
 		init: function() {
-			console.log("init app");
+			console.log("launch app");
 			routes.init();
 		}
 	};
