@@ -81,15 +81,14 @@
 
 
 
-			// var listSection = document.getElementById("section-list"),
-			// 	startSection = document.getElementById("section-start");
+			// var sectionHome = document.getElementById("home"),
+			// 	sectionOther = document.getElementById("other-section");
 
-			// if (listSection.classList == "hide") {
-			// 	listSection.classList.add("hide");
-			// 	startSection.classList.remove("hide");
+			// if (sectionOther.classList == "hide") {
+			// 	sectionHome.classList.remove("hide");
 			// } else {
-			// 	listSection.classList.remove("hide");
-			// 	startSection.classList.add("hide");
+			// 	sectionOther.classList.remove("hide");
+			// 	sectionHome.classList.add("hide");
 			// }
 
 
