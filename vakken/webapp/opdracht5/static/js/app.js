@@ -15,11 +15,13 @@
 			console.log("init routes");
 			
 			// The hashchange event fires when a window's hash changes.
-			window.addEventListener("hashchange", function(event) {
-
-				// The window.location read-only property returns a Location object with information about the current location of the document.
-				sections.toggle();
-			});
+			// window.addEventListener("hashchange", function(event) {
+			// 	sections.toggle(window.location.hash);
+			// });
+			
+			window.addEventListener("hashchange", function() { 
+				sections.toggle() 
+			}, false);
 
 			// sections.toggle(window.location.hash);
 		}
@@ -58,16 +60,16 @@
 
 
 
-			var listSection = document.getElementById("section-list"),
-				startSection = document.getElementById("section-start");
+			// var listSection = document.getElementById("section-list"),
+			// 	startSection = document.getElementById("section-start");
 
-			if (listSection.style.display == "block") {
-				listSection.style.display = "none";
-				startSection.style.display = "block";
-			} else {
-				listSection.style.display = "block";
-				startSection.style.display = "none";
-			}
+			// if (listSection.style.display == "block") {
+			// 	listSection.style.display = "none";
+			// 	startSection.style.display = "block";
+			// } else {
+			// 	listSection.style.display = "block";
+			// 	startSection.style.display = "none";
+			// }
 
 
 
