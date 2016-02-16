@@ -19,8 +19,9 @@
 			// 	sections.toggle(window.location.hash);
 			// });
 			
+			// The hashchange event fires when a window's hash changes.
 			window.addEventListener("hashchange", function() { 
-				sections.toggle() 
+				sections.toggle(window.location.hash); 
 			}, false);
 
 			// sections.toggle(window.location.hash);
