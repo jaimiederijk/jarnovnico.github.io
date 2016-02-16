@@ -1,6 +1,6 @@
 (function() {
 
-	var app = {
+	var launcher = {
 
 		// Methodes are defining functions to an object.
 		init: function() {
@@ -13,6 +13,10 @@
 		
 		init: function() {
 			console.log("init routes");
+
+			// Conditional (ternary) operator
+			//If condition is true, the operator has the value of val1. Otherwise it has the value of val2.
+			var home = window.location.hash ? window.location.hash : "#home";
 			
 			// The hashchange event fires when a window's hash changes.
 			// window.addEventListener("hashchange", function(event) {
@@ -21,7 +25,7 @@
 			
 			// The hashchange event fires when a window's hash changes.
 			window.addEventListener("hashchange", function() { 
-				sections.toggle(window.location.hash); 
+				sections.toggle(home); 
 			}, false);
 
 			// sections.toggle(window.location.hash);
@@ -83,7 +87,7 @@
 	};
 
 	// Activate app.
-	app.init()
+	launcher.init()
 
 })();
 
