@@ -37,8 +37,11 @@
 
 	var sections = {
 
-		toggle: function() {
+		toggle: function(route) {
 			console.log("toggle sections");
+
+			// If condition is true, the operator has the value of route. Otherwise it has the value of object window.
+			var id = route ? route : window.location.hash;
 
 			// querySelectorAll gives a array and then with a for loop, go through all sections and hide them
 			for (var i = 0; i < document.querySelectorAll("section").length; i++) {
@@ -46,7 +49,7 @@
 			};
 
 			// Get the current hash and remove the class "hide". That will make it display block
-			document.querySelector(window.location.hash).classList.remove("hide");
+			document.querySelector(id).classList.remove("hide");
 
 
 
@@ -81,12 +84,12 @@
 			// var listSection = document.getElementById("section-list"),
 			// 	startSection = document.getElementById("section-start");
 
-			// if (listSection.style.display == "block") {
-			// 	listSection.style.display = "none";
-			// 	startSection.style.display = "block";
+			// if (listSection.classList == "hide") {
+			// 	listSection.classList.add("hide");
+			// 	startSection.classList.remove("hide");
 			// } else {
-			// 	listSection.style.display = "block";
-			// 	startSection.style.display = "none";
+			// 	listSection.classList.remove("hide");
+			// 	startSection.classList.add("hide");
 			// }
 
 
