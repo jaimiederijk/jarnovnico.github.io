@@ -1,6 +1,7 @@
 h1 {
+  margin-top: 0;
   text-transform: uppercase;
-} 
+}
 
 h2 {
   text-transform: uppercase;
@@ -19,6 +20,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  margin: 0;
 }
 ol, ul {
   list-style: none;
@@ -52,5 +54,10 @@ section {
   border: 1px solid gray;
   padding-left: 15px;
   padding-top: 15px;
-  margin-top: 15px;
+  margin-top: 42px;
+}
+
+footer {
+  margin-top: 42px;
+  margin-bottom: 42px;
 }
