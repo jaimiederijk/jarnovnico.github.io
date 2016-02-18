@@ -33,10 +33,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol, ul {
   list-style: none;
 }
@@ -55,7 +51,9 @@ table {
   border-spacing: 0;
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none; 
+}
 
 a:visited { color: inherit; }
 
@@ -72,6 +70,7 @@ a:visited { color: inherit; }
 }
 
 * {
+  transition: all .2s ease-in-out;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -166,7 +165,16 @@ body > header svg {
 main {
   width: 100%;
   padding: 0;
-  background-color: #E1EFE6;
+  
+  // background-color: #E1EFE6;
+
+  background: hsl(181,47%,82%);
+  background-image: 
+    linear-gradient(90deg, #726DA8 11px, transparent 0),
+    linear-gradient(90deg, #7D8CC4 23px, transparent 0),
+    linear-gradient(90deg, #A0D2DB 23px, transparent 0);
+  background-size: 83px 100%, 61px 100%, 41px 100%;
+
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -194,18 +202,25 @@ main article:target {
 
 main article:nth-child(2) header {
   width: 100%;
+  display: block;
+  flex-basis: 100%;
 }
 
 main article:nth-child(2) > section {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 1em;
 }
 
 main article:nth-child(2) > section figure {
-  max-width: 300px;
-  max-width: min-content;
-  margin: auto;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+main article:nth-child(2) > section figure:nth-child(6) {
+  margin-bottom: 0;
 }
 
 main article:nth-child(2) > div:nth-child(2) > button {
@@ -240,6 +255,35 @@ main article:nth-child(3) input {
   height: 3em;
   width: 100%;
   padding-left: 1em;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label {
+  margin-top: 0.5em;
+  width: 100%;
+  display: inline-block;
+  padding: .35em .5em .2em;
+  border: 2px solid #160C28;
+  border-radius: .3em;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:active + label {
+  transition: .25s transform;
+  color: #fff;
+  background: #160C28;
+}
+
+input[type="checkbox"]:hover + label {
+  transition: .25s transform;
+  transform: scale(1.1);
 }
 
 main article:nth-child(3) span {
@@ -305,11 +349,13 @@ main article:nth-child(4) figcaption {
 }
 
 [role="button"] {
+  position: relative;
   width: 100%;
   font-size: 1.2em;
   font-weight: bold;
   border-radius: 0.2em;
   padding: 0.2em 0.4em;
+  background-clip: padding-box;
   outline: none;
   color: #fff;
   background-color: #EFCB68;
@@ -321,6 +367,15 @@ main article:nth-child(4) figcaption {
   opacity: .75;
   transform: scale(1.1);
   transition: all .2s ease-in-out;
+}
+
+[role="button"]:before {
+  content: "";
+  position: absolute;
+  top: -1em; 
+  right: -1em;
+  bottom: -1em; 
+  left: -1em;
 }
 
 article:nth-child(6) {
@@ -388,6 +443,14 @@ address {
   
   footer {
     flex-direction: row;
+  }
+
+  main article:nth-child(2) > section {
+    flex-direction: row;
+  }
+
+  main article:nth-child(2) > section figure {
+    width: 6.5em;
   }
 
   address {
