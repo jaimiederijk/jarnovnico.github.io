@@ -14,24 +14,12 @@
 		init: function() {
 			console.log("init routes");
 
-			// Conditional (ternary) operator
-			// If condition is true, the operator has the value of val1. Otherwise it has the value of val2.
-			var home = window.location.hash ? window.location.hash : "#home";
-			
-			// The hashchange event fires when a window's hash changes.
-			// window.addEventListener("hashchange", function(event) {
-			// 	sections.toggle(window.location.hash);
-			// });
-			
-			// Fire the toggle() methode where first section gets to be "#home"
-			sections.toggle(home);
+			// :name is the current hash
+			routie(':name', function(name) {
+				// Fire the toggle() methode where first section gets to be "#home"
+				sections.toggle(name);
+			});
 
-			// The hashchange event fires when a window's hash changes.
-			window.addEventListener("hashchange", function() { 
-				 sections.toggle()
-			}, false);
-
-			// sections.toggle(window.location.hash);
 		}
 	};
 
@@ -40,8 +28,8 @@
 		toggle: function(route) {
 			console.log("toggle sections");
 
-			// If condition is true, the operator has the value of route. Otherwise it has the value of object window.
-			var id = route ? route : window.location.hash;
+			// there is now always a route 
+			var id = route;
 
 			// querySelectorAll gives a array and then with a for loop, go through all sections and hide them
 			for (var i = 0; i < document.querySelectorAll("section").length; i++) {
